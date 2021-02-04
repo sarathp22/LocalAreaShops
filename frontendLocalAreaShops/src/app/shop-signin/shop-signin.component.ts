@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopService } from '../shop.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop-signin',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shop-signin.component.css']
 })
 export class ShopSigninComponent implements OnInit {
-
-  constructor() { }
+ shop = {email:"", password: ""};
+ serverData;
+ errData;
+  constructor(private _shop:ShopService, private _router:Router) { }
 
   ngOnInit(): void {
+  }
+  onSubmit()
+  {
+    //  console.log("Shop:",this.shop);
+    this._shop.shopLogin(this.shop).subscribe((data)=>{this.serverData=data,this._router.navigate(['/home1']);},(err)=>{if(err){this.errData=err}})
+      
   }
 
 }

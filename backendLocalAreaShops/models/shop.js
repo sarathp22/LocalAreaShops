@@ -24,6 +24,7 @@ var shopSchema = new Schema({
     },
     password: {
         type:String,
+        required: true,
         
     },
     usertype:   {

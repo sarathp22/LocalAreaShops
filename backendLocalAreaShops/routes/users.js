@@ -1,6 +1,7 @@
 var express = require('express');
 var userRouter = express.Router();
 var Users = require('../models/user');
+var Shops = require('../models/shop');
 var TokenCheck = require('../models/tokenCheck');
 var TokenData = require('../models/tokenData');
 
@@ -11,43 +12,71 @@ userRouter.route('/')
 });
 userRouter.route('/signup')
 .post((req,res,next)=>{
-  // console.log(req.body);
+//   console.log(req.body);
   // res.send('registered');
-  Users.create(req.body).then((user)=> {
-    console.log('User registered' , user);
-    res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json(user);
-    }, (err) => next(err))
-    .catch((err) => next(err));
+  Users.findOne({email:req.body.email},(err,userdata)=>{
+
+    if(userdata)
+    {
+        console.log("Email already registered");
+        res.send("Email already registered");
+    }
+    else
+    {
+        Users.create(req.body).then((user)=> {
+            console.log('User registered' , user);
+            res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(user);
+            }, (err) => next(err))
+            .catch((err) => next(err));
+    }
+
+  })
+
+  
 });
+
+
 
 userRouter.route('/login')
 .post((req,res,next)=>{
+    console.log()
 Users.findOne({email:req.body.email},(err,user)=>{
   if(err)
   {
       console.log(err);
   }
   else{
-      if(!user)
-      {
-          res.status(401).send('Invalid email');
-      }
+        if(!user)
+        {
+            res.status(401).send("Invalid email");
+        }
       else{
-          if(user.password != userData.password)
+          if(user.password != req.body.password)
           {
-              res.status(401).send('Invalid password');
+            res.status(401).send("Invalid password");
           }
           else{
       //         let payload = {subject:user._id};
       // let token=jwt.sign(payload, 'secretKey');
       // res.status(200).send({token});
               // res.status(200).send(user);
+              res.status(200).send({"token":user._id,"usertype":user.usertype,"name":user.name,"phone":user.phone,"email":user.email});
           }
       }
   }
 })
+})
+
+
+
+userRouter.route('/getShops/:categoryId')
+.get((req,res,next)=>{
+    console.log(req.params.categoryId);
+    Shops.find({category:req.params.categoryId}).then((shops)=>
+    {res.send(shops)},(err)=>{next(err)})
+    .catch((err) => next(err));
 })
 
 userRouter.route('/tokenRequest/:ownerId')

@@ -31,27 +31,27 @@
 </a>
 <h2>Sign Up</h2>
 </div>
-<form>
+<form novalidate #shopSignupForm="ngForm" (ngSubmit)="onSubmit()">
 <div class="row">
 <div class="col-lg-6">
 <div class="form-group">
-<input type="text" class="form-control" placeholder="Shop name">
+<input type="text" class="form-control" name="shopname" [(ngModel)]="shop.shopname" placeholder="Shop name">
 </div>
 </div>
 <div class="col-lg-6">
 <div class="form-group">
-<input type="text" class="form-control" placeholder="GST number">
+<input type="text" class="form-control" name="gstno" [(ngModel)]="shop.gstno" placeholder="GST number">
 </div>
 </div>
 <div class="col-lg-12">
     <div class="form-group">
-    <textarea name="" id="" cols="30" class="form-control" rows="8" placeholder="Enter Shop address"></textarea>
+    <textarea name="" id="" cols="30" name="address" class="form-control" rows="8" [(ngModel)]="shop.address" placeholder="Enter Shop address"></textarea>
     </div>
     </div>
 <div class="col-lg-12">
 <div class="form-group">
-<input list="browsers" class="form-control" name="browser" id="browser" placeholder="Select Shop category">
-<datalist id="browsers" class="form-control">
+<input list="categorys" class="form-control" name="category" id="category" [(ngModel)]="shop.category" placeholder="Select Shop category">
+<datalist id="categorys" class="form-control">
   <option value="Grocery">
   <option value="Pharmacy">
   <option value="Textile">
@@ -63,21 +63,24 @@
 
 <div class="col-lg-6">
 <div class="form-group">
-<input type="email" class="form-control" placeholder="Email">
+<input type="email" class="form-control" name="email" [(ngModel)]="shop.email" placeholder="Email">
 </div>
  </div>
 <div class="col-lg-6">
 <div class="form-group">
-<input type="password" class="form-control" placeholder="Password">
+<input type="password" class="form-control" name="password" [(ngModel)]="shop.password" placeholder="Password">
 </div>
 </div>
 <div class="col-lg-12">
-<button type="submit" class="btn common-btn">Sign Up</button>
+  <p>{{errData?.error}}</p>
+</div>
+<div class="col-lg-12">
+<button type="submit" class="btn common-btn" [disabled]="shopSignupForm.form.invalid">Sign Up</button>
 </div>
 </div>
 </form>
 <div class="bottom">
-<p>Already created account? <a href="sign-in.html">Sign In</a></p>
+<p>Already created account? <a routerLink="/shopSignup">Sign In</a></p>
 <h4>OR</h4>
 <ul>
 <li>

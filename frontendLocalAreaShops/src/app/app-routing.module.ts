@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Home1Component } from './home1/home1.component';
+import { SelectTokenComponent } from './select-token/select-token.component';
+import { ShopListComponent } from './shop-list/shop-list.component';
+import { ShopSelectComponent } from './shop-select/shop-select.component';
 import { ShopSigninComponent } from './shop-signin/shop-signin.component';
 import { ShopSignupComponent } from './shop-signup/shop-signup.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
@@ -11,6 +14,9 @@ const routes: Routes = [{path:'home1',component:Home1Component},
                         {path:'shopSignin',component:ShopSigninComponent},
                         {path:'userSignup',component:UserSignupComponent},
                         {path:'userSignin',component:UserSigninComponent},
+                        {path:'admin/shopList',component:ShopListComponent},
+                        {path:'user/shopSelect',component:ShopSelectComponent},
+                        {path:'user/tokenSelect', component:SelectTokenComponent},
                         {path:'',redirectTo:'home1',pathMatch:'full'}                                        
                                                                     ];
 

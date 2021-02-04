@@ -30,17 +30,20 @@
 </a>
 <h2>Sign In</h2>
 </div>
-<form>
+<form novalidate #shopSignupForm="ngForm" (ngSubmit)="onSubmit()">
 <div class="row">
 <div class="col-lg-12">
 <div class="form-group">
-<input type="email" class="form-control" placeholder="Email">
+<input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="shop.email">
 </div>
 </div>
 <div class="col-lg-12">
 <div class="form-group">
-<input type="password" class="form-control" placeholder="Password">
+<input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="shop.password">
 </div>
+</div>
+<div class="col-lg-12">
+    <p>{{errData?.error}}</p>
 </div>
 <div class="col-lg-12">
 <button type="submit" class="btn common-btn">Sign In</button>

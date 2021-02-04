@@ -1,0 +1,109 @@
+<!-- <p>shop-select works!</p> -->
+
+<div class="user-form-area" style="margin-bottom: 200px;">
+    <div class="container-fluid p-0">
+    <div class="row m-0">
+    <!-- <div class="col-lg-6 p-0">
+    <div class="user-img">
+    <img src="assets/img/user-form-bg.jpg" alt="User">
+    </div>
+    </div> -->
+    <div class="col-lg-12 p-0">
+    <div class="user-content">
+    <div class="d-table">
+    <div class="d-table-cell">
+    <div class="user-content-inner">
+    <div class="top">
+    <!-- <a href="index.html">
+    <img src="assets/img/logo.png" alt="Logo">
+    </a> -->
+    <h2>Shop List</h2>
+    </div>
+    <form novalidate #shopSignupForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+    <!-- <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text" class="form-control" name="shopname" [(ngModel)]="shop.shopname" placeholder="Shop name">
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text" class="form-control" name="gstno" [(ngModel)]="shop.gstno" placeholder="GST number">
+    </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+        <textarea name="" id="" cols="30" name="address" class="form-control" rows="8" [(ngModel)]="shop.address" placeholder="Enter Shop address"></textarea>
+        </div>
+        </div> -->
+    <div class="col-lg-12">
+    <div class="form-group">
+    <input list="categorys" class="form-control" name="category" id="category"  (change)="shopSelect($event)" placeholder="Select Shop category">
+    <datalist id="categorys" class="form-control">
+      <option value="Grocery">
+      <option value="Pharmacy">
+      <option value="Textile">
+      <option value="Fancy">
+      <option value="Sports accessories">
+    </datalist>
+    </div>
+    </div>
+    
+    <!-- <div class="col-lg-6">
+    <div class="form-group">
+    <input type="email" class="form-control" name="email" [(ngModel)]="shop.email" placeholder="Email">
+    </div>
+     </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <input type="password" class="form-control" name="password" [(ngModel)]="shop.password" placeholder="Password">
+    </div>
+    </div> -->
+    <!-- <div class="col-lg-12">
+      <p>{{errData?.error}}</p>
+    </div> -->
+    <div class="col-lg-12" *ngIf="shopsinCategory">
+        <div class="form-group">
+            <input list="shops" class="form-control" name="shop" id="shop" placeholder="Select Shop">
+            <datalist id="shops" class="form-control" *ngFor="let data of shopsinCategory">
+             <option value="{{data.shopname}}" (click)="shopSubmit(data._id)">
+              <!-- <option value="Pharmacy">
+              <option value="Textile">
+              <option value="Fancy">
+              <option value="Sports accessories"> -->
+            </datalist>
+            </div>
+    </div>
+
+    <!-- <div class="col-lg-12">
+    <button type="submit" class="btn common-btn" [disabled]="shopSignupForm.form.invalid">Sign Up</button>
+    </div> -->
+
+    </div>
+    </form>
+    <!-- <div class="bottom">
+    <p>Already created account? <a routerLink="/shopSignup">Sign In</a></p>
+    <h4>OR</h4>
+    <ul>
+    <li>
+    <a href="#" target="_blank">
+    <i class="icofont-facebook"></i>
+    Connect with Facebook
+    </a>
+    </li>
+    <li>
+    <a href="#" target="_blank">
+    <i class="icofont-google-plus"></i>
+    Connect with Google
+    </a>
+    </li>
+    </ul>
+    </div> -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>

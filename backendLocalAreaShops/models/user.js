@@ -20,7 +20,7 @@ var userSchema = new Schema({
     },
     usertype:   {
         type: Number,
-        required: true,
+        default: 2
     }
 },{
     timestamps: true

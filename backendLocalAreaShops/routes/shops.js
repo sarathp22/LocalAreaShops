@@ -11,13 +11,27 @@ shopRouter.route('/signup')
 .post((req,res,next)=>{
 //   console.log(req.body);
 //   res.send('registered');
-  Shops.create(req.body).then((user)=> {
-    console.log('User registered' , user);
-    res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json(user);
-    }, (err) => next(err))
-    .catch((err) => next(err));
+
+Shops.findOne({email:req.body.email},(err,userdata)=>{
+
+    if(userdata)
+    {
+        console.log("Email already registered");
+        res.send("Email already registered");
+    }
+    else
+    {
+        Shops.create(req.body).then((user)=> {
+            console.log('User registered' , user);
+            res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(user);
+            }, (err) => next(err))
+            .catch((err) => next(err));
+    }
+
+  })
+
 });
 
 shopRouter.route('/login')
@@ -33,7 +47,7 @@ Shops.findOne({email:req.body.email,status:true},(err,user)=>{
           res.status(401).send('Your registration not approved.Contact admin');
       }
       else{
-          if(user.password != userData.password)
+          if(user.password != req.body.password)
           {
               res.status(401).send('Invalid password');
           }
