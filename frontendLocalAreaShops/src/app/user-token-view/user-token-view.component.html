@@ -1,0 +1,25 @@
+<!-- <p>user-token-view works!</p> -->
+<div class="col-md-12 p-3">
+    <h1 class="text-center p-4">Token Booked</h1>
+<div *ngFor="let data of tokens let i=index">
+    <div [ngSwitch]="data.slot" class="text-center">
+       <p *ngSwitchCase="'t7'"><span class="mr-1">{{i+1}}.</span> Date:{{data.date | date}}     <span> Token Time:7AM-8AM </span> </p> 
+        <p *ngSwitchCase="'t8'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date  | date}}    <span>   Token Time:8AM-9AM </span> </p> 
+        <p *ngSwitchCase="'t9'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date  | date}}     <span>   Token Time:9AM-10AM </span> </p> 
+        <p *ngSwitchCase="'t10'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}   <span>     Token Time:10AM-11AM </span></p>
+        <p *ngSwitchCase="'t11'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>   Token Time:11AM-12PM </span></p>
+        <p *ngSwitchCase="'t12'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>  Token Time:12PM-1PM </span></p>
+        <p *ngSwitchCase="'t13'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>    Token Time:1AM-2PM </span></p>
+        <p *ngSwitchCase="'t14'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>   Token Time:2PM-3PM </span></p>
+        <p *ngSwitchCase="'t15'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>    Token Time:3PM-4PM </span></p>
+        <p *ngSwitchCase="'t16'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>   Token Time:4PM-5PM </span></p>
+        <p *ngSwitchCase="'t17'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>    Token Time:5PM-6PM </span></p>
+        <p *ngSwitchCase="'t18'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>   Token Time:6PM-7PM </span></p>
+        <p *ngSwitchCase="'t19'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}    <span>    Token Time:7PM-8PM </span></p>
+        <p *ngSwitchCase="'t20'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}   <span>     Token Time:8AM-9AM </span></p>
+        <p *ngSwitchCase="'t21'"><span class="mr-1">{{i+1}}.</span>Date:{{data.date | date}}   <span>    Token Time:9PM-10PM </span></p>
+
+    </div>
+
+</div>
+</div>

@@ -4,6 +4,7 @@ var Users = require('../models/user');
 var Shops = require('../models/shop');
 var TokenCheck = require('../models/tokenCheck');
 var TokenData = require('../models/tokenData');
+var Token = require('../models/token');
 
 userRouter.route('/')
 /* GET users listing. */
@@ -70,6 +71,15 @@ Users.findOne({email:req.body.email},(err,user)=>{
 })
 
 
+userRouter.route('/getTokenList/:id')
+.get((req,res,next)=>{
+
+    Token.find({userId:req.params.id}).then((t1)=>
+    {res.send(t1)},(err)=>{next(err)})
+    .catch((err) => next(err));
+
+});
+
 
 userRouter.route('/getShops/:categoryId')
 .get((req,res,next)=>{
@@ -133,14 +143,21 @@ userRouter.route('/tokenRequest/:ownerId')
                     tokendata.tokenData.forEach(element => {
 
                         if(element.date == req.body.date)
-                        {
-                            
+                        { 
+                            //code below not tested
+
+                            Token.create({userId:req.body.userId,slot:req.body.slot,date:req.body.date})
+                            .then((t)=>{
+                                
+                            }
+                            , (err) => next(err));
+
                             //token count not checking here
                             
                                 element[req.body.slot].push({userId:req.body.userId,userName:req.body.userName,phone:req.body.phone})
                                 tokendata.save().then((temp2)=>{
                                     console.log(temp2);
-                                    res.send("token approved");
+                                    res.status(200).send("token approved");
                                 }
                                 , (err) => next(err));
                                 return;
@@ -184,10 +201,17 @@ userRouter.route('/tokenRequest/:ownerId')
 
                                         if(element.date == req.body.date)
                                         {
+
+                                                Token.create({userId:req.body.userId,slot:req.body.slot,date:req.body.date})
+                                                .then((t)=>{
+                                                    
+                                                }
+                                                , (err) => next(err));
+
                                                 element[req.body.slot].push({userId:req.body.userId,userName:req.body.userName,phone:req.body.phone})
                                                 tokendata.save().then((temp2)=>{
                                                     console.log(temp2);
-                                                    res.send("token approved")
+                                                    res.status(200).send("token approved")
                                                 }
                                                 , (err) => next(err));
                                                 return;
@@ -210,7 +234,7 @@ userRouter.route('/tokenRequest/:ownerId')
                         }
                                             else
                                             {
-                                                res.send("Please try another time slot");
+                                                res.status(401).send("Please try another time slot");
                                             }
                         
                     }
@@ -283,9 +307,17 @@ userRouter.route('/tokenRequest/:ownerId')
                         
                                                 if(element.date == req.body.date)
                                                 {
+
+                                                    //code below not tested
+
+                                                        Token.create({userId:req.body.userId,slot:req.body.slot,date:req.body.date})
+                                                        .then((t)=>{
+                                                            
+                                                        }
+                                                        , (err) => next(err));
                                                     
                                                     //token count not checking here
-                                                    
+
                                                         element[req.body.slot].push({userId:req.body.userId,userName:req.body.userName,phone:req.body.phone})
                                                         tokendata1.save().then((temp3)=>{
                                                             console.log(temp3);

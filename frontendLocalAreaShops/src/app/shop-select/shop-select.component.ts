@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop-select',
@@ -25,10 +25,11 @@ export class ShopSelectComponent implements OnInit {
 
   }
 
-  shopSubmit(data)
+  shopSubmit(temp)
   {
-    console.log(data);
-    this._router.navigate([])
+    // console.log(data);
+    var data= temp.target.value;
+    this._router.navigate(['user/tokenSelect/'+data])
 
   }
 

@@ -17,4 +17,8 @@ export class AdminService {
   {
     return this._http.get<any>("http://localhost:3000/admin/" + data)
   }
+  userLogin(data)
+  {
+    return this._http.post("http://localhost:3000/admin/login", data)
+  }
 }

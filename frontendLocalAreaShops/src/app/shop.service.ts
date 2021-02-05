@@ -16,5 +16,9 @@ export class ShopService {
   {
     return this._http.post("http://localhost:3000/shop/login", data)
   }
+  shopTokens(data)
+  {
+    return this._http.get<any>("http://localhost:3000/shop/tokens/" + data)
+  }
 
 }

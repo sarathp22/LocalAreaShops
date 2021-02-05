@@ -1,0 +1,131 @@
+<!-- <p>shop-tokens works!</p> -->
+<div>
+    <h1></h1>
+
+    <div style="overflow-x: auto;">
+    <table class="table table-bordered table-default">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">7AM-8AM</th>
+            <th scope="col">8AM-9AM</th>
+            <th scope="col">9AM-10AM</th>
+            <th scope="col">10AM-11AM</th>
+            <th scope="col">11AM-12PM</th>
+            <th scope="col">12PM-1PM</th>
+            <th scope="col">1PM-2PM</th>
+            <th scope="col">2PM-3PM</th>
+            <th scope="col">3PM-4PM</th>
+            <th scope="col">4PM-5PM</th>
+            <th scope="col">5PM-6PM</th>
+            <th scope="col">6PM-7PM</th>
+            <th scope="col">7PM-8PM</th>
+            <th scope="col">8PM-9PM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let token of tokens?.tokenData let i = index">
+          <td scope="row"> <b>{{token?.date | date}} </b> </td> 
+            <td >
+                <dl *ngFor="let slot of token?.t7 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t8 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t9 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t10 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t11 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t12 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t13 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t14 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t15 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t16 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t17 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t18 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t20 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+            <td >
+                <dl *ngFor="let slot of token?.t21 let j = index">
+                <dt>Name: {{slot?.userName}}</dt>
+                <dd>Token NO: {{j+1}}</dd>
+                <dd>Phone: {{slot?.phone}}</dd>
+              </dl>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

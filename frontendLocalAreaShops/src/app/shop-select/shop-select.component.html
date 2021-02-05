@@ -62,17 +62,23 @@
     <!-- <div class="col-lg-12">
       <p>{{errData?.error}}</p>
     </div> -->
-    <div class="col-lg-12" *ngIf="shopsinCategory">
+
+    <!-- <div class="col-lg-12" *ngIf="shopsinCategory">
         <div class="form-group">
             <input list="shops" class="form-control" name="shop" id="shop" placeholder="Select Shop">
             <datalist id="shops" class="form-control" *ngFor="let data of shopsinCategory">
              <option value="{{data.shopname}}" (click)="shopSubmit(data._id)">
-              <!-- <option value="Pharmacy">
-              <option value="Textile">
-              <option value="Fancy">
-              <option value="Sports accessories"> -->
             </datalist>
             </div>
+    </div> -->
+
+    <div class="col-lg-12" *ngIf="shopsinCategory">
+      <div class="form-group">
+        <select class="form-control" name="shop" id="shop" placeholder="Select Shop" (change)="shopSubmit($event)">
+          <option>Select Shop</option>  
+          <option *ngFor="let data of shopsinCategory" value="{{data._id}}">{{data.shopname}}</option>
+        </select>
+      </div>
     </div>
 
     <!-- <div class="col-lg-12">

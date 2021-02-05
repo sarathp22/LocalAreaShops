@@ -1,6 +1,7 @@
 var express = require('express');
 var shopRouter = express.Router();
 var Shops = require('../models/shop');
+var TokenData = require('../models/tokenData');
 
 shopRouter.route('/')
 /* GET users listing. */
@@ -52,6 +53,9 @@ Shops.findOne({email:req.body.email,status:true},(err,user)=>{
               res.status(401).send('Invalid password');
           }
           else{
+              
+            res.status(200).send({"token":user._id,"usertype":user.usertype,"name":user.shopname,"phone":user.phone,"email":user.email});
+
       //         let payload = {subject:user._id};
       // let token=jwt.sign(payload, 'secretKey');
       // res.status(200).send({token});
@@ -59,6 +63,17 @@ Shops.findOne({email:req.body.email,status:true},(err,user)=>{
       }
   }
 })
-})
+});
+
+shopRouter.route('/tokens/:id')
+.get((req,res,next)=>{
+// console.log(req.params.id);
+TokenData.findOne({owner:req.params.id}).then((data)=>{
+    // console.log(data);
+    res.send(data)
+},(err)=> next(err)
+).catch((err)=> next(err))
+
+});
 
 module.exports = shopRouter;

@@ -16,6 +16,14 @@ import { UserSigninComponent } from './user-signin/user-signin.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
 import { ShopSelectComponent } from './shop-select/shop-select.component';
 import { SelectTokenComponent } from './select-token/select-token.component';
+import { ShopTokensComponent } from './shop-tokens/shop-tokens.component';
+import { UserTokenViewComponent } from './user-token-view/user-token-view.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ShopGuard } from './shop.guard';
+import { CustGuard } from './cust.guard';
+import { AdminGuard } from './admin.guard';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,12 @@ import { SelectTokenComponent } from './select-token/select-token.component';
     UserSigninComponent,
     ShopListComponent,
     ShopSelectComponent,
-    SelectTokenComponent
+    SelectTokenComponent,
+    ShopTokensComponent,
+    UserTokenViewComponent,
+    AboutComponent,
+    ContactComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +51,7 @@ import { SelectTokenComponent } from './select-token/select-token.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ ShopGuard,CustGuard,AdminGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

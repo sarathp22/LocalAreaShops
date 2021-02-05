@@ -18,8 +18,13 @@ export class ShopSigninComponent implements OnInit {
   onSubmit()
   {
     //  console.log("Shop:",this.shop);
-    this._shop.shopLogin(this.shop).subscribe((data)=>{this.serverData=data,this._router.navigate(['/home1']);},(err)=>{if(err){this.errData=err}})
+    this._shop.shopLogin(this.shop).subscribe((data)=>{this.serverData=data,this.userSave(data),this._router.navigate(['/shop/tokenList']);},(err)=>{if(err){this.errData=err}})
       
+  }
+  userSave(data)
+  {
+    var myObj= JSON.stringify(data);
+    localStorage.setItem ('LocalAreaShops', myObj);
   }
 
 }
