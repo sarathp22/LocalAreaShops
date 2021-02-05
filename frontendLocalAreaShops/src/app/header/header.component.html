@@ -773,13 +773,13 @@
         <a  class="nav-link dropdown-toggle">Shop <i class="icofont-simple-down"></i></a>
         <ul class="dropdown-menu">
         <li class="nav-item">
-            <a routerLink="/shopSignup" class="nav-link">Signup</a>
+            <a routerLink="/shopSignup" class="nav-link" [hidden]="(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Signup</a>
         </li>
         <li class="nav-item">
-            <a routerLink="/shopSignin" class="nav-link">Signin</a>
+            <a routerLink="/shopSignin" class="nav-link" [hidden]="(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Signin</a>
         </li>
         <li class="nav-item">
-            <a routerLink="shop/tokenList" class="nav-link">Token List</a>
+            <a routerLink="shop/tokenList" class="nav-link" [hidden]="!(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Token List</a>
         </li>
         </ul>
         </li>
@@ -789,16 +789,16 @@
             <a  class="nav-link dropdown-toggle">User <i class="icofont-simple-down"></i></a>
             <ul class="dropdown-menu">
             <li class="nav-item">
-                <a routerLink="/userSignup" class="nav-link">Signup</a>
+                <a routerLink="/userSignup" class="nav-link" [hidden]="(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Signup</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/userSignin" class="nav-link">Signin</a>
+                <a routerLink="/userSignin" class="nav-link" [hidden]="(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Signin</a>
             </li>
             <li class="nav-item">
-                <a routerLink="user/shopSelect" class="nav-link">Token Request</a>
+                <a routerLink="user/shopSelect" class="nav-link" [hidden]="!(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Token Request</a>
             </li>
             <li class="nav-item">
-                <a routerLink="user/tokens" class="nav-link">Token List</a>
+                <a routerLink="user/tokens" class="nav-link" [hidden]="!(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Token List</a>
             </li>
             </ul>
             </li>
@@ -841,7 +841,7 @@
         </li>
         </ul>
         <div class="side-nav">
-        <a class="donate-btn" (click)="logout()">
+        <a class="donate-btn" (click)="logout()" *ngIf="(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">
             Logout
         <i class="icofont-heart-alt"></i>
         </a>
