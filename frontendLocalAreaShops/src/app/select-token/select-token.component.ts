@@ -14,6 +14,7 @@ response;
 user = {date:'',slot:'',userName:'',phone:'',userId:''};
 temp ={slot:''};
 out;
+out1;
   constructor(private _activate:ActivatedRoute, private _user:UserService) { }
 
   ngOnInit(): void {
@@ -103,7 +104,7 @@ out;
 
     console.log(this.user);
 
-    this._user.tokenRequest(this.urlId, this.user).subscribe((data)=>{this.response=JSON.parse(JSON.stringify(data));console.log(this.response)},(err)=>{console.log(err),this.out=err.error.text,console.log(err.error.text)})
+    this._user.tokenRequest(this.urlId, this.user).subscribe((data)=>{this.response=JSON.parse(JSON.stringify(data));console.log(this.response)},(err)=>{console.log(err),this.out=err.error.text,this.out1=err.error,console.log(err.error.text)})
 
   }
 
