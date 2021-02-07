@@ -20,5 +20,21 @@ export class ShopService {
   {
     return this._http.get<any>("http://localhost:3000/shop/tokens/" + data)
   }
+  getSpecifShop(data)
+  {
+    return this._http.get<any>("http://localhost:3000/shop/" + data)
+  }
+  updateSpecifShop(data,userId)
+  {
+    return this._http.put<any>("http://localhost:3000/shop/" + userId , data)
+  }
+  updateWorkingHour(data,userId)
+  {
+    return this._http.put<any>("http://localhost:3000/shop/updateWork/" + userId , data)
+  }
+  getWorkingHour(userId)
+  {
+    return this._http.get<any>("http://localhost:3000/shop/getWork/" + userId)
+  }
 
 }

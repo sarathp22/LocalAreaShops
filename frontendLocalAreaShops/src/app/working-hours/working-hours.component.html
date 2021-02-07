@@ -1,0 +1,374 @@
+<!-- <p>shop-signin works!</p> -->
+
+<!-- <div class="loader" style="margin-bottom: 300px;">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="pre-box-one">
+<div class="pre-box-two"></div>
+</div>
+</div>
+</div>
+</div> -->
+
+
+<div class="user-form-area" >
+    <div class="container-fluid p-0">
+    <div class="row m-0">
+ 
+        <div class="col-lg-6 p-0">
+            <br>
+            <br>
+            <br>
+
+            <h2 class="text-center my-5">Current Working Hours</h2>
+        
+            <div class="row m-0">
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <p class="mt-3">Day</p>
+                    </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <p class="mt-3">Open</p>
+                        </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <p class="mt-3">Close</p>
+                            </div>
+                            </div>
+                           
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <p class="mt-3">Sunday:</p>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <p class="mt-3">{{currentWork.sunopen}}</p>
+                    </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <p class="mt-3">{{currentWork.sunclose}}</p>
+                        </div>
+                        </div>
+                       
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <p class="mt-3">Monday:</p>
+                            </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <p class="mt-3">{{currentWork.monopen}}</p>
+                                </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <p class="mt-3">{{currentWork.monclose}}</p>
+                                    </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <p class="mt-3">Tuesday:</p>
+                                        </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <p class="mt-3">{{currentWork.tueopen}}</p>
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <p class="mt-3">{{currentWork.tueclose}}</p>
+                                                </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <p class="mt-3">Wednesday:</p>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <p class="mt-3">{{currentWork.wedopen}}</p>
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                <p class="mt-3">{{currentWork.wedclose}}</p>
+                                                            </div>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <div class="form-group">
+                                                                    <p class="mt-3">Thursday:</p>
+                                                                </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="form-group">
+                                                                        <p class="mt-3">{{currentWork.thuopen}}</p>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="form-group">
+                                                                            <p class="mt-3">{{currentWork.thuclose}}</p>
+                                                                        </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <p class="mt-3">Friday:</p>
+                                                                            </div>
+                                                                            </div>
+                                                                            <div class="col-lg-4">
+                                                                                <div class="form-group">
+                                                                                    <p class="mt-3">{{currentWork.friopen}}</p>
+                                                                                </div>
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <div class="form-group">
+                                                                                        <p class="mt-3">{{currentWork.friclose}}</p>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4">
+                                                                                        <div class="form-group">
+                                                                                            <p class="mt-3">Saturday:</p>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4">
+                                                                                            <div class="form-group">
+                                                                                                <p class="mt-3">{{currentWork.satopen}}</p>
+                                                                                            </div>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                <div class="form-group">
+                                                                                                    <p class="mt-3">{{currentWork.satclose}}</p>
+                                                                                                </div>
+                                                                                                </div>
+
+                        </div>
+
+        </div>
+
+    <div class="col-lg-6 p-0">
+    <div class="user-content">
+    <div class="d-table">
+    <div class="d-table-cell">
+    <div class="user-content-inner">
+    <div class="top">
+    <a href="index.html">
+    <img src="assets/img/logo.png" alt="Logo">
+    </a>
+    <h2>Working Hours</h2>
+    </div>
+    <form novalidate #userSigninForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+    <div class="col-lg-3">
+    <div class="form-group">
+        <p class="mt-3">Sunday:</p>
+    </div>
+    </div>
+    <div class="col-lg-3">
+    <div class="form-group">
+    <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.sunopen">
+    </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="form-group">
+        <input type="time" class="form-control" name="sclose" placeholder="Password" [(ngModel)]="work.sunclose">
+        </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+            <select name="sflag" id="faf" class="form-control" [(ngModel)]="work.sunflag">
+              
+                <option value="true">Open</option>
+                <option value="false">Close</option>
+            </select>
+            </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <p class="mt-3">Monday:</p>
+                </div>
+                </div>
+                <div class="col-lg-3">
+                <div class="form-group">
+                <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.monopen">
+                </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                    <input type="time" class="form-control" name="sclose" placeholder="Password" [(ngModel)]="work.monclose">
+                    </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                        
+                        </div>
+                        </div>
+
+
+
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <p class="mt-3">Tuesday:</p>
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                            <div class="form-group">
+                            <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.tueopen">
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                <input type="time" class="form-control" name="sclose" placeholder="Password" [(ngModel)]="work.tueclose">
+                                </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                    
+                                    </div>
+                                    </div>
+
+
+            
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <p class="mt-3">Wednesday:</p>
+                                        </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                        <div class="form-group">
+                                        <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.wedopen">
+                                        </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                            <input type="time" class="form-control" name="sclose" placeholder="Password" [(ngModel)]="work.wedclose">
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                
+                                                </div>
+                                                </div>
+
+
+
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <p class="mt-3">Thursday:</p>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                    <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.thuopen">
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                        <input type="time" class="form-control" name="sclose" placeholder="close" [(ngModel)]="work.thuclose">
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <div class="form-group">
+                                                            
+                                                            </div>
+                                                            </div>
+
+
+                                                            <div class="col-lg-3">
+                                                                <div class="form-group">
+                                                                    <p class="mt-3">Friday:</p>
+                                                                </div>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                <div class="form-group">
+                                                                <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.friopen">
+                                                                </div>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <div class="form-group">
+                                                                    <input type="time" class="form-control" name="sclose" placeholder="close" [(ngModel)]="work.friclose">
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                        <div class="form-group">
+                                                                        
+                                                                        </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <p class="mt-3">Saturday:</p>
+                                                                            </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                            <input type="time" class="form-control" name="sopen" placeholder="Open" [(ngModel)]="work.satopen">
+                                                                            </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group">
+                                                                                <input type="time" class="form-control" name="sclose" placeholder="close" [(ngModel)]="work.satclose">
+                                                                                </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3">
+                                                                                    <div class="form-group">
+                                                                                    <select name="sflag" id="faf" class="form-control" [(ngModel)]="work.satflag">
+                                                                                      
+                                                                                        <option value="true">Open</option>
+                                                                                        <option value="false">Close</option>
+                                                                                    </select>
+                                                                                    </div>
+                                                                                    </div>
+                                                                
+                                                                       
+
+
+
+
+    <!-- <div class="col-lg-12">
+        <p>{{errData?.error}}</p>
+    </div> -->
+    <div class="col-lg-12">
+    <button type="submit" class="btn common-btn">Add</button>
+    </div>
+    </div>
+    </form>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="go-top">
+    <i class="icofont-arrow-up"></i>
+    <i class="icofont-arrow-up"></i>
+    </div>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+

@@ -24,6 +24,8 @@ import { ShopGuard } from './shop.guard';
 import { CustGuard } from './cust.guard';
 import { AdminGuard } from './admin.guard';
 import { AdminComponent } from './admin/admin.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { WorkingHoursComponent } from './working-hours/working-hours.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AdminComponent } from './admin/admin.component';
     UserTokenViewComponent,
     AboutComponent,
     ContactComponent,
-    AdminComponent
+    AdminComponent,
+    ProfileEditComponent,
+    WorkingHoursComponent
   ],
   imports: [
     BrowserModule,

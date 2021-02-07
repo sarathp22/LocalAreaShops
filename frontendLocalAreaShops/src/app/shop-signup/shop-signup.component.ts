@@ -18,7 +18,7 @@ export class ShopSignupComponent implements OnInit {
     onSubmit()
     {
       // console.log("Shop:",this.shop)
-      this._shop.shopSignup(this.shop).subscribe((data)=>{this.serverData=data,this._router.navigate(['/shopSignin']);},(err)=>{if(err){this.errData=err}})
+      this._shop.shopSignup(this.shop).subscribe((data)=>{this.serverData=data,this._router.navigate(['/shopSignin']);},(err)=>{this.errData=err;console.log(this.errData)})
       
     }
 

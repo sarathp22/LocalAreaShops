@@ -71,8 +71,11 @@
 <input type="password" class="form-control" name="password" [(ngModel)]="shop.password" placeholder="Password">
 </div>
 </div>
-<div class="col-lg-12">
+<!-- <div class="col-lg-12">
   <p>{{errData?.error}}</p>
+</div> -->
+<div class="col-lg-12">
+  <p>{{errData?.error.text}}</p>
 </div>
 <div class="col-lg-12">
 <button type="submit" class="btn common-btn" [disabled]="shopSignupForm.form.invalid">Sign Up</button>

@@ -4,6 +4,7 @@ var Shops = require('../models/shop');
 var TokenCheck = require('../models/tokenCheck');
 var TokenData = require('../models/tokenData');
 var Users = require('../models/user');
+var WorkingHours = require('../models/workingHours');
 
 
 Adminrouter.route('/login')
@@ -55,6 +56,13 @@ Adminrouter.route('/:shopownerId')
     Shops.findByIdAndUpdate( req.params.shopownerId, {$set:{status:true}}).then((shop)=>{
 
         //logic
+        WorkingHours.create({shopId:req.params.shopownerId}).then((data)=>{
+            
+        },
+        (err)=> next(err))
+        .catch((err)=> next(err));
+
+
         TokenCheck.create({owner:req.params.shopownerId}).then((shoptoken)=>{
             
             TokenData.create({owner:req.params.shopownerId}).then((shopData)=>{

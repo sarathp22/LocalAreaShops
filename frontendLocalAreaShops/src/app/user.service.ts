@@ -28,4 +28,8 @@ export class UserService {
   {
     return this._http.get("http://localhost:3000/user/getTokenList/" + data)
   }
+  getWorkingHour(userId)
+  {
+    return this._http.get<any>("http://localhost:3000/user/getWork/" + userId)
+  }
 }

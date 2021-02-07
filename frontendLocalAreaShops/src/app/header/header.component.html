@@ -781,9 +781,15 @@
         <li class="nav-item">
             <a routerLink="shop/tokenList" class="nav-link" [hidden]="!(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Token List</a>
         </li>
+        <li class="nav-item">
+            <a routerLink="shop/profileupdate" class="nav-link" [hidden]="!(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Profile update</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="shop/addWorkingHours" class="nav-link" [hidden]="!(_auth.shopLoggedIn() || _auth.custLoggedIn() || _auth.adminLoggedIn())">Working Hours</a>
+        </li>
         </ul>
         </li>
-
+       
 
         <li class="nav-item">
             <a  class="nav-link dropdown-toggle">User <i class="icofont-simple-down"></i></a>

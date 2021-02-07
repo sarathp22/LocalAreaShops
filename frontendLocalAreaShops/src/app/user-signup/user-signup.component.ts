@@ -18,7 +18,7 @@ export class UserSignupComponent implements OnInit {
   onSubmit()
   {
     console.log("user",this.user);
-    this._user.userSignup(this.user).subscribe((data)=>{this.serverData=data, this._router.navigate(['/userSignin']);},(err)=>{if(err){this.errData=err}})
+    this._user.userSignup(this.user).subscribe((data)=>{this.serverData=data, this._router.navigate(['/userSignin']);},(err)=>{this.errData=err,console.log(this.errData)})
      
   }
 

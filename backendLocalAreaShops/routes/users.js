@@ -5,6 +5,7 @@ var Shops = require('../models/shop');
 var TokenCheck = require('../models/tokenCheck');
 var TokenData = require('../models/tokenData');
 var Token = require('../models/token');
+var WorkingHours = require('../models/workingHours');
 
 userRouter.route('/')
 /* GET users listing. */
@@ -37,6 +38,18 @@ userRouter.route('/signup')
 
   
 });
+
+
+userRouter.route('/getWork/:id')
+.get((req,res,next)=>{
+    console.log("Hai")
+    WorkingHours.findOne({shopId:req.params.id}).then((t)=>{
+        console.log(t);
+        res.send(t)
+    },(err)=> next(err)
+    ).catch((err)=> next(err))
+
+})
 
 
 

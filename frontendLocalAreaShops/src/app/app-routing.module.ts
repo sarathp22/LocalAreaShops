@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { CustGuard } from './cust.guard';
 import { Home1Component } from './home1/home1.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { SelectTokenComponent } from './select-token/select-token.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
 import { ShopSelectComponent } from './shop-select/shop-select.component';
@@ -16,6 +17,7 @@ import { ShopGuard } from './shop.guard';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserTokenViewComponent } from './user-token-view/user-token-view.component';
+import { WorkingHoursComponent } from './working-hours/working-hours.component';
 
 const routes: Routes = [{path:'home1',component:Home1Component},
                         {path:'shopSignup',component:ShopSignupComponent},
@@ -30,6 +32,8 @@ const routes: Routes = [{path:'home1',component:Home1Component},
                         {path:'contact', component:ContactComponent},
                         {path:'about', component:AboutComponent},
                         {path:'admin',component:AdminComponent},
+                        {path:'shop/profileupdate',component:ProfileEditComponent, canActivate:[ShopGuard]},
+                        {path:'shop/addWorkingHours',component:WorkingHoursComponent, canActivate:[ShopGuard]},
                         {path:'',redirectTo:'home1',pathMatch:'full'}                                        
                                                                     ];
 

@@ -15,12 +15,16 @@ user = {date:'',slot:'',userName:'',phone:'',userId:''};
 temp ={slot:''};
 out;
 out1;
+currentWork
   constructor(private _activate:ActivatedRoute, private _user:UserService) { }
 
   ngOnInit(): void {
     this._activate.paramMap.subscribe(data=>{
       this.urlId=data.get('id');
       console.log(this.urlId);
+      this._user.getWorkingHour(this.urlId).subscribe((data)=>{this.currentWork=data;console.log(this.currentWork)},(err)=>{console.log(err)})
+
+
       // this.register.getUserId(this.urlId).subscribe((data)=>{this.Registration=JSON.parse(JSON.stringify(data));console.log(this.Registration);},
       // (err)=>{console.log(err)})
     })
