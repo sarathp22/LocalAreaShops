@@ -12,10 +12,13 @@ urlId;
 userData;
 response;
 user = {date:'',slot:'',userName:'',phone:'',userId:''};
+date;
+slot;
 temp ={slot:''};
 out;
 out1;
-currentWork
+currentWork;
+error;
   constructor(private _activate:ActivatedRoute, private _user:UserService) { }
 
   ngOnInit(): void {
@@ -40,8 +43,9 @@ currentWork
   onSubmit()
   {
     
+    console.log(this.date,this.slot);
     var slot = this.temp.slot.substring(0,2);
-    // console.log(typeof(slot));
+    console.log((slot));
     if(slot == "07")
     {
       this.user.slot = "t7";
@@ -108,7 +112,7 @@ currentWork
 
     console.log(this.user);
 
-    this._user.tokenRequest(this.urlId, this.user).subscribe((data)=>{this.response=JSON.parse(JSON.stringify(data));console.log(this.response)},(err)=>{console.log(err),this.out=err.error.text,this.out1=err.error,console.log(err.error.text)})
+    this._user.tokenRequest(this.urlId, this.user).subscribe((data)=>{this.response=JSON.parse(JSON.stringify(data));console.log(this.response);this.error=null},(err)=>{this.error =err;this.response=null })
 
   }
 

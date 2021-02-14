@@ -1,152 +1,17 @@
-<!-- <p>select-token works!</p> -->
-<!-- <p>shop-select works!</p> -->
 
 <div class="user-form-area" style="margin-bottom: 200px;">
     <div class="container-fluid p-0">
     <div class="row m-0">
-    <!-- <div class="col-lg-6 p-0">
-    <div class="user-img">
-    <img src="assets/img/user-form-bg.jpg" alt="User">
-    </div>
-    </div> -->
+   
 
 
 
-    <div class="col-lg-6 p-0">
-      <br>
 
-      <h2 class="text-center my-5">Current Working Hours</h2>
+
+
+
+
   
-      <div class="row m-0">
-
-          <div class="col-lg-4">
-              <div class="form-group">
-                  <p class="mt-3">Day</p>
-              </div>
-              </div>
-              <div class="col-lg-4">
-                  <div class="form-group">
-                      <p class="mt-3">Open</p>
-                  </div>
-                  </div>
-                  <div class="col-lg-4">
-                      <div class="form-group">
-                          <p class="mt-3">Close</p>
-                      </div>
-                      </div>
-                     
-      <div class="col-lg-4">
-          <div class="form-group">
-              <p class="mt-3">Sunday:</p>
-          </div>
-          </div>
-          <div class="col-lg-4">
-              <div class="form-group">
-                  <p class="mt-3">{{currentWork.sunopen}}</p>
-              </div>
-              </div>
-              <div class="col-lg-4">
-                  <div class="form-group">
-                      <p class="mt-3">{{currentWork.sunclose}}</p>
-                  </div>
-                  </div>
-                 
-                  <div class="col-lg-4">
-                      <div class="form-group">
-                          <p class="mt-3">Monday:</p>
-                      </div>
-                      </div>
-                      <div class="col-lg-4">
-                          <div class="form-group">
-                              <p class="mt-3">{{currentWork.monopen}}</p>
-                          </div>
-                          </div>
-                          <div class="col-lg-4">
-                              <div class="form-group">
-                                  <p class="mt-3">{{currentWork.monclose}}</p>
-                              </div>
-                              </div>
-
-                              <div class="col-lg-4">
-                                  <div class="form-group">
-                                      <p class="mt-3">Tuesday:</p>
-                                  </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                      <div class="form-group">
-                                          <p class="mt-3">{{currentWork.tueopen}}</p>
-                                      </div>
-                                      </div>
-                                      <div class="col-lg-4">
-                                          <div class="form-group">
-                                              <p class="mt-3">{{currentWork.tueclose}}</p>
-                                          </div>
-                                          </div>
-                                          <div class="col-lg-4">
-                                              <div class="form-group">
-                                                  <p class="mt-3">Wednesday:</p>
-                                              </div>
-                                              </div>
-                                              <div class="col-lg-4">
-                                                  <div class="form-group">
-                                                      <p class="mt-3">{{currentWork.wedopen}}</p>
-                                                  </div>
-                                                  </div>
-                                                  <div class="col-lg-4">
-                                                      <div class="form-group">
-                                                          <p class="mt-3">{{currentWork.wedclose}}</p>
-                                                      </div>
-                                                      </div>
-                                                      <div class="col-lg-4">
-                                                          <div class="form-group">
-                                                              <p class="mt-3">Thursday:</p>
-                                                          </div>
-                                                          </div>
-                                                          <div class="col-lg-4">
-                                                              <div class="form-group">
-                                                                  <p class="mt-3">{{currentWork.thuopen}}</p>
-                                                              </div>
-                                                              </div>
-                                                              <div class="col-lg-4">
-                                                                  <div class="form-group">
-                                                                      <p class="mt-3">{{currentWork.thuclose}}</p>
-                                                                  </div>
-                                                                  </div>
-
-                                                                  <div class="col-lg-4">
-                                                                      <div class="form-group">
-                                                                          <p class="mt-3">Friday:</p>
-                                                                      </div>
-                                                                      </div>
-                                                                      <div class="col-lg-4">
-                                                                          <div class="form-group">
-                                                                              <p class="mt-3">{{currentWork.friopen}}</p>
-                                                                          </div>
-                                                                          </div>
-                                                                          <div class="col-lg-4">
-                                                                              <div class="form-group">
-                                                                                  <p class="mt-3">{{currentWork.friclose}}</p>
-                                                                              </div>
-                                                                              </div>
-                                                                              <div class="col-lg-4">
-                                                                                  <div class="form-group">
-                                                                                      <p class="mt-3">Saturday:</p>
-                                                                                  </div>
-                                                                                  </div>
-                                                                                  <div class="col-lg-4">
-                                                                                      <div class="form-group">
-                                                                                          <p class="mt-3">{{currentWork.satopen}}</p>
-                                                                                      </div>
-                                                                                      </div>
-                                                                                      <div class="col-lg-4">
-                                                                                          <div class="form-group">
-                                                                                              <p class="mt-3">{{currentWork.satclose}}</p>
-                                                                                          </div>
-                                                                                          </div>
-
-                  </div>
-
-  </div>
     <div class="col-lg-6 p-0">
     <div class="user-content">
     <div class="d-table">
@@ -187,11 +52,11 @@
     <input type="password" class="form-control" name="password" [(ngModel)]="shop.password" placeholder="Password">
     </div>
     </div> -->
-    <div class="col-lg-12">
-      <p>{{out}}</p>
+    <div class="col-lg-12" *ngIf="response">
+      <p>{{response.out}}</p>
     </div>
-    <div class="col-lg-12">
-      <p>{{out1}}</p>
+    <div class="col-lg-12" *ngIf="error">
+      <p>{{error.error.out}}</p>
     </div>
 
     <div class="col-lg-12">
@@ -223,6 +88,150 @@
     </div>
     </div>
     </div>
+
+
+
+    <div class="col-lg-6 p-0">
+        <br>
+  
+        <h2 class="text-center my-5">Current Working Hours</h2>
+    
+        <div class="row m-0">
+  
+            <div class="col-lg-4">
+                <div>
+                    <p class="mt-3">Day</p>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div >
+                        <p class="mt-3">Open</p>
+                    </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div >
+                            <p class="mt-3">Close</p>
+                        </div>
+                        </div>
+                       
+        <div class="col-lg-4">
+            <div >
+                <p class="mt-3">Sunday:</p>
+            </div>
+            </div>
+            <div class="col-lg-4">
+                <div >
+                    <p class="mt-3">{{currentWork.sunopen}}</p>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div >
+                        <p class="mt-3">{{currentWork.sunclose}}</p>
+                    </div>
+                    </div>
+                   
+                    <div class="col-lg-4">
+                        <div >
+                            <p class="mt-3">Monday:</p>
+                        </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div >
+                                <p class="mt-3">{{currentWork.monopen}}</p>
+                            </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div >
+                                    <p class="mt-3">{{currentWork.monclose}}</p>
+                                </div>
+                                </div>
+  
+                                <div class="col-lg-4">
+                                    <div >
+                                        <p class="mt-3">Tuesday:</p>
+                                    </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div >
+                                            <p class="mt-3">{{currentWork.tueopen}}</p>
+                                        </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div >
+                                                <p class="mt-3">{{currentWork.tueclose}}</p>
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div >
+                                                    <p class="mt-3">Wednesday:</p>
+                                                </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div >
+                                                        <p class="mt-3">{{currentWork.wedopen}}</p>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div >
+                                                            <p class="mt-3">{{currentWork.wedclose}}</p>
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div >
+                                                                <p class="mt-3">Thursday:</p>
+                                                            </div>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <div >
+                                                                    <p class="mt-3">{{currentWork.thuopen}}</p>
+                                                                </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div >
+                                                                        <p class="mt-3">{{currentWork.thuclose}}</p>
+                                                                    </div>
+                                                                    </div>
+  
+                                                                    <div class="col-lg-4">
+                                                                        <div >
+                                                                            <p class="mt-3">Friday:</p>
+                                                                        </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <div >
+                                                                                <p class="mt-3">{{currentWork.friopen}}</p>
+                                                                            </div>
+                                                                            </div>
+                                                                            <div class="col-lg-4">
+                                                                                <div >
+                                                                                    <p class="mt-3">{{currentWork.friclose}}</p>
+                                                                                </div>
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <div >
+                                                                                        <p class="mt-3">Saturday:</p>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4">
+                                                                                        <div >
+                                                                                            <p class="mt-3">{{currentWork.satopen}}</p>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4">
+                                                                                            <div >
+                                                                                                <p class="mt-3">{{currentWork.satclose}}</p>
+                                                                                            </div>
+                                                                                            </div>
+  
+                    </div>
+  
+    </div>
+
+
+
+
+
+
     </div>
     </div>
     </div>

@@ -9,6 +9,7 @@ import { ShopService } from '../shop.service';
 export class ShopTokensComponent implements OnInit {
   userData;
   tokens;
+  temp;
   constructor(private _shop:ShopService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,17 @@ export class ShopTokensComponent implements OnInit {
 
 
   }
+
+  delete(dateSelect,slot,arrayId,date)
+  {
+    // console.log(date,arrayId);
+    // this._shop.shopTokenDelete(this.userData.token,dateSelect,slot,arrayId).subscribe((data)=>{this.tokens = data;console.log(this.tokens)},(err)=>{console.log(err)})
+    this._shop.shopTokenDelete(this.userData.token,dateSelect,slot,arrayId,date).subscribe((data)=>{},(err)=>{console.log(err)})
+    alert("Successfully Deleted");
+    window.location.reload();
+  }
+  
+ 
 
 
 

@@ -21,6 +21,7 @@
             <th scope="col">6PM-7PM</th>
             <th scope="col">7PM-8PM</th>
             <th scope="col">8PM-9PM</th>
+            <th scope="col">9PM-10PM</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t7',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -38,6 +40,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t8',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -45,6 +48,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t9',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -52,6 +56,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t10',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -59,6 +64,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t11',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -66,6 +72,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t12',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -73,6 +80,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t13',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -80,6 +88,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t14',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -87,6 +96,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t15',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -94,6 +104,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t16',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -101,6 +112,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t17',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -108,13 +120,23 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t18',slot._id,token.date)">Delete</button>
               </dl>
             </td>
+            <td >
+              <dl *ngFor="let slot of token?.t19 let j = index">
+              <dt>Name: {{slot?.userName}}</dt>
+              <dd>Token NO: {{j+1}}</dd>
+              <dd>Phone: {{slot?.phone}}</dd>
+              <button class="btn btn-warning" (click)="delete(token._id,'t19',slot._id,token.date)">Delete</button>
+            </dl>
+          </td>
             <td >
                 <dl *ngFor="let slot of token?.t20 let j = index">
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t20',slot._id,token.date)">Delete</button>
               </dl>
             </td>
             <td >
@@ -122,6 +144,7 @@
                 <dt>Name: {{slot?.userName}}</dt>
                 <dd>Token NO: {{j+1}}</dd>
                 <dd>Phone: {{slot?.phone}}</dd>
+                <button class="btn btn-warning" (click)="delete(token._id,'t21',slot._id,token.date)">Delete</button>
               </dl>
             </td>
           </tr>

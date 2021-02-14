@@ -34,7 +34,7 @@ const routes: Routes = [{path:'home1',component:Home1Component},
                         {path:'admin',component:AdminComponent},
                         {path:'shop/profileupdate',component:ProfileEditComponent, canActivate:[ShopGuard]},
                         {path:'shop/addWorkingHours',component:WorkingHoursComponent, canActivate:[ShopGuard]},
-                        {path:'',redirectTo:'home1',pathMatch:'full'}                                        
+                        {path:'',redirectTo:'home1',pathMatch:'full'},                                        
                                                                     ];
 
 @NgModule({

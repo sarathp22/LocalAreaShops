@@ -106,7 +106,7 @@ userRouter.route('/tokenRequest/:ownerId')
 .post((req,res,next)=>{
 
     //add logic to increment time slot first time => copy same code below or check temp1 console done
-
+    console.log(req.body.date);
     TokenCheck.findOne({owner:req.params.ownerId}).then((token)=>{
         console.log(token);
         if( token.tokenCount.length == 0)
@@ -170,7 +170,7 @@ userRouter.route('/tokenRequest/:ownerId')
                                 element[req.body.slot].push({userId:req.body.userId,userName:req.body.userName,phone:req.body.phone})
                                 tokendata.save().then((temp2)=>{
                                     console.log(temp2);
-                                    res.status(200).send("token approved");
+                                    res.status(200).send({out:"token approved"});
                                 }
                                 , (err) => next(err));
                                 return;
@@ -224,7 +224,7 @@ userRouter.route('/tokenRequest/:ownerId')
                                                 element[req.body.slot].push({userId:req.body.userId,userName:req.body.userName,phone:req.body.phone})
                                                 tokendata.save().then((temp2)=>{
                                                     console.log(temp2);
-                                                    res.status(200).send("token approved")
+                                                    res.status(200).send({out:"token approved"})
                                                 }
                                                 , (err) => next(err));
                                                 return;
@@ -247,7 +247,7 @@ userRouter.route('/tokenRequest/:ownerId')
                         }
                                             else
                                             {
-                                                res.status(401).send("Please try another time slot");
+                                                res.status(401).send({out:"Please try another time slot"});
                                             }
                         
                     }
@@ -334,7 +334,7 @@ userRouter.route('/tokenRequest/:ownerId')
                                                         element[req.body.slot].push({userId:req.body.userId,userName:req.body.userName,phone:req.body.phone})
                                                         tokendata1.save().then((temp3)=>{
                                                             console.log(temp3);
-                                                            res.send("token approved");
+                                                            res.status(200).send({out:"token approved"});
                                                         }
                                                         , (err) => next(err));
                                                         return;

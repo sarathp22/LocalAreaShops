@@ -20,6 +20,12 @@ export class ShopService {
   {
     return this._http.get<any>("http://localhost:3000/shop/tokens/" + data)
   }
+
+  shopTokensDatas(data)
+  {
+    return this._http.get<any>("http://localhost:3000/shop/tokens/datas/" + data)
+  }
+  
   getSpecifShop(data)
   {
     return this._http.get<any>("http://localhost:3000/shop/" + data)
@@ -35,6 +41,10 @@ export class ShopService {
   getWorkingHour(userId)
   {
     return this._http.get<any>("http://localhost:3000/shop/getWork/" + userId)
+  }
+  shopTokenDelete(userId,date,arrayId,slot,dateFull)
+  {
+    return this._http.delete<any>("http://localhost:3000/shop/deleteToken/" + userId + "/" + date + "/" + arrayId + "/" + slot + "/" + dateFull)
   }
 
 }

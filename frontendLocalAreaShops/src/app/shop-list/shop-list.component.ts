@@ -17,7 +17,8 @@ export class ShopListComponent implements OnInit {
   approve(data)
   {
     this._admin.adminShopApproval(data).subscribe((data)=>{console.log(data)},(err)=>{console.log(err)});
-    this._admin.shopDataFetch().subscribe((data)=>{this.shopList=data;console.log(this.shopList)},(err)=>{console.log(err)})
+    // this._admin.shopDataFetch().subscribe((data)=>{this.shopList=data;console.log(this.shopList)},(err)=>{console.log(err)})
+    window.location.reload();
   }
 
 }
